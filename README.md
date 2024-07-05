@@ -4,7 +4,7 @@
   <img src="https://i.ibb.co/XxGH29G/apkit.png" width="200" alt="APkit Logo">
 </p>
 
-APkit is a powerful tool designed for analyzing security vulnerabilities and reversing Android APK files. Currently in Beta Phase, See [Screenshots](https://github.com/System00-Security/Apkit/DemoShots).
+APkit is a powerful tool designed for analyzing security vulnerabilities and reversing Android APK files. Currently in Beta Phase, See [Screenshots](https://github.com/System00-Security/Apkit/demoshots).
 
 ## Reporting Issues
 
@@ -59,6 +59,8 @@ We welcome contributions from anyone interested in improving this project. To co
 Your contributions, whether they involve code improvements, bug fixes, documentation enhancements, or new features, are greatly appreciated and help make this project better for everyone.
 
 Thank you for considering contributing to our project!
+
+
 
 
 
