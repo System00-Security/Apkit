@@ -1,0 +1,86 @@
+{
+    "A01:2023 - Broken Access Control": {
+      "Description": "Improper verification of access rights or exploitation of flaws in the access control mechanism.",
+      "Remediation": [
+        "Implement strong access control mechanisms that enforce least privilege.",
+        "Validate all user input and authorization claims.",
+        "Regularly review and update access control policies."
+      ],
+      "Matchers": [
+        "\\b(android\\.permission\\.(READ_CONTACTS|ACCESS_FINE_LOCATION|RECORD_AUDIO|CAMERA))\\b",
+        "\\bContentProvider\\.query\\(.*\\)\\b"
+      ]
+    },
+    "A02:2023 - Cryptographic Failures": {
+      "Description": "Use of weak or insecure cryptographic algorithms, improper key management, or other cryptographic flaws.",
+      "Remediation": [
+        "Use strong cryptographic algorithms and protocols (e.g., AES-256, TLS 1.3).",
+        "Implement secure key management practices.",
+        "Validate and sanitize user-supplied data before cryptographic operations."
+      ],
+      "Matchers": [
+        "\\b(MD5|SHA1)\\b",
+        "\\b(Key = .*)|(\\[\"key\"\\] = .*)\\b"
+      ]
+    },
+    "A03:2023 - Injection": {
+      "Description": "Introduction of malicious code into an interpreter by exploiting vulnerabilities in the parsing logic.",
+      "Remediation": [
+        "Validate and sanitize all user input before processing.",
+        "Use prepared statements or parameterized queries to prevent SQL injection.",
+        "Encode user input before including it in HTML output (e.g., XSS prevention)."
+      ],
+      "Matchers": [
+        "\\b(SQLiteDatabase;->execSQL\\(.*\\))|(SQLiteQueryBuilder;->(query|insert|update|delete)\\(.*\\(.*\\)))\\b",
+        "\\b\\.(webView|loadData)\\(.*<script>.*</script>.*\\)\\b"
+      ]
+    },
+    "A04:2023 - Insecure Design": {
+      "Description": "Fundamental security flaws in the system design that can be difficult to mitigate after implementation.",
+      "Remediation": [
+        "Follow secure design principles from the beginning of the development process.",
+        "Consider security implications throughout the software lifecycle.",
+        "Use secure coding practices and frameworks."
+      ],
+      "Matchers": [
+        "\\bandroid:allowBackup=\"true\"\\b",
+        "\\bandroid:debuggable=\"true\"\\b"
+      ]
+    },
+    "A05:2023 - Security Misconfiguration": {
+      "Description": "Incorrect configuration of security settings, software defaults, or system parameters.",
+      "Remediation": [
+        "Follow security best practices for all software and systems used.",
+        "Regularly review and update security configurations.",
+        "Use automated tools to detect and remediate misconfigurations."
+      ],
+      "Matchers": [
+        "\\b^(?!.*usesCleartextTraffic)\\b"
+      ]
+    },
+    "A06:2023 - Vulnerable and Outdated Components": {
+      "Description": "Use of libraries, frameworks, or other components with known security vulnerabilities.",
+      "Remediation": [
+        "Keep all software components up-to-date with the latest security patches.",
+        "Identify and address vulnerabilities in third-party libraries used in your application.",
+        "Consider using a Software Bill of Materials (SBOM) to track dependencies."
+      ],
+      "Matchers": [
+        "\\bThis section requires manual review of dependencies and known vulnerabilities using CVE databases or security advisories.\\b"
+      ]
+    },
+    "A07:2023 - Identification and Authentication Failures": {
+      "Description": "Inadequate or insecure mechanisms for user authentication and session management.",
+      "Remediation": [
+        "Implement strong authentication mechanisms (e.g., multi-factor authentication).",
+        "Use secure session management practices.",
+        "Regularly audit and monitor authentication and session activities."
+      ],
+      "Matchers": [
+        "\\bauthenticator\\b",
+        "\\bandroid\\.accounts\\.AccountManager\\b",
+        "\\bSecuritization of all apk files; detected in the app\\b"
+      ]
+    }
+  }
+  

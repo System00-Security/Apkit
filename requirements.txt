@@ -1,0 +1,4 @@
+colorama
+frida
+frida-tools
+androguard==3.4.0a1

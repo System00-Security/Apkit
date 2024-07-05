@@ -1,0 +1,246 @@
+{
+    "Biometric or Fingerprint Detection": {
+      "Severity": "info",
+      "Matcher": [
+        "(android.permission.USE_FINGERPRINT|android.permission.USE_BIOMETRIC)"
+      ]
+    },
+    "ADB Backup Enabled": {
+      "Severity": "low",
+      "Matcher": [
+        "android:allowBackup=\"true\""
+      ]
+    },
+    "Improper Certificate Validation": {
+      "Severity": "medium",
+      "Matcher": [
+        "Landroid/webkit/SslErrorHandler;->proceed\\(\\)"
+      ]
+    },
+    "Android Debug Enable": {
+      "Severity": "info",
+      "Matcher": [
+        "android:debuggable=\"true\""
+      ]
+    },
+    "SQL Injection": {
+      "Severity": "high",
+      "Matcher": [
+        "(SQLiteDatabase;->execSQL|SQLiteQueryBuilder;->(query|insert|update|delete))\\(.*\\)" 
+      ]
+    },
+    "Insecure WebView Implementation": {
+      "Severity": "high",
+      "Matcher": [
+        "Landroid/webkit/WebView;->loadUrl\\(.*\\)"  
+      ]
+    },
+    "Webview with JavaScript Enabled": {
+      "Severity": "low",
+      "Matcher": [
+        "(setJavaScriptEnabled|Landroid/webkit/WebSettings;->setJavaScriptEnabled\\(Z\\)V)"
+      ]
+    },
+    "Firebase Database Url": {
+      "Severity": "info",
+      "Matcher": [
+        "[a-z0-9.-]+\\.firebaseio\\.com"
+      ]
+    },
+    "Weak Cryptographic Hash": {
+      "Severity": "medium",
+      "Matcher": [
+        "(MD5|SHA1)"
+      ]
+    },
+    "Code Execution": {
+      "Severity": "high",
+      "Matcher": [
+        "(Runtime.exec|ProcessBuilder.start)"
+      ]
+    },
+    "Insecure Data Storage": {
+      "Severity": "low",
+      "Matcher": [
+        "(MODE_WORLD_READABLE|MODE_WORLD_WRITABLE)|(openFileOutput|openFileInput|getSharedPreferences|getExternalStorage(Directory|FilesDir|CacheDir)|getCacheDir|getFilesDir|getDir)\\(.*\\)"  
+      ]
+    },
+    "Insecure Intent": {
+      "Severity": "low",
+      "Matcher": [
+        "(startActivity|startActivityForResult|send(Broadcast|OrderedBroadcast|StickyBroadcast)|start(Service|ForegroundService))\\(.*\\)"  
+      ]
+    },
+    "Sqlite Database": {
+      "Severity": "info",
+      "Matcher": [
+        "SQLiteDatabase"
+      ]
+    },
+    "Task Hijacking": {
+      "Severity": "high",
+      "Matcher": [
+        "android:allowTaskReparenting"
+      ]
+    },
+    "Apk Injections": {
+      "Severity": "high",
+      "Matcher": [
+        "(dexClassLoader|loadDex)"
+      ]
+    },
+    "Deep Linking": {
+      "Severity": "info",
+      "Matcher": [
+        "android.intent.action.VIEW"
+      ]
+    },
+    "Local File Inclusion": {
+      "Severity": "high",
+      "Matcher": [
+        "(file:|content:)\\//.*"
+      ]
+    },
+    "Android Backup Enabled": {
+      "Severity": "info",
+      "Matcher": [
+        "android:allowBackup"
+      ]
+    },
+    "Hardcoded Credentials": {
+      "Severity": "high",
+      "Matcher": [
+        "[a-zA-Z]{3,10}://[^/\\s:@]{3,20}:[^/\\s:@]{3,20}@.{1,100}[\"'\\s]",
+        "http://[^/\\s:@]{3,20}:[^/\\s:@]{3,20}@.{1,100}[\"'\\s]",
+        "bearer\\s[a-zA-Z0-9_\\-:\\.=]+",
+        "basic\\s[a-zA-Z0-9_\\-:\\.=]+"
+      ]
+      },
+        "Hardcoded Encryption Key": {
+      "Severity": "high",
+      "Matcher": [
+        "(Dec_key =|Enc_key =|AES_KEY =|DES_KEY =|RSA_KEY = ).*" 
+      ]
+    },
+    "Root Activity": {
+      "Severity": "info",
+      "Matcher": [
+        "(import dexguard.util|RootDetector.isDeviceRooted)|(com\\.noshufou\\.android\\.su|com\\.thirdparty\\.superuser|eu\\.chainfire\\.supersu|com\\.koushikdutta\\.superuser|eu\\.chainfire\\.)|(/system/app/Superuser.apk|isDeviceRooted|/system/bin/failsafe/su|/system/sd/xbin/su|/\"system/xbin/which\"|\"su\"|/system/bin/su|/system/xbin/su)"
+      ]
+    },
+    "Dynamic Loading": {
+      "Severity": "info",
+      "Matcher": [
+        "(dalvik\\.system\\.(DexClassLoader|PathClassLoader)|java\\.security\\.ClassLoader|(java\\.net|java\\.security)\\.URLClassLoader|dalvik\\.system\\.(DexFile|DexPathList))|(loadDex|loadClass|DexClassLoader|(loadDexFile|getRuntime\\(\\).exec))"  
+      ]
+    },
+    "Insecure Communication": {
+      "Severity": "info",
+      "Matcher": [
+        "(net\\.URL|openStream|net\\.JarURL|JarURL|jar:|HttpURL|org\\.apache\\.http\\.(HttpRequest|HttpResponse))|(javax\\.net\\.ssl\\.HttpsURL|HttpsURL|http\\.client\\.(HttpClient|AndroidHttpClient)|http\\.impl\\.client\\.AbstractHttpClient)"
+      ]
+    },
+    "Webview Implementation and Javascript": {
+      "Severity": "info",
+      "Matcher": [
+        "android.webkit\\.(.*)",  
+        ".addJavascriptInterface",
+        ".setWebContentsDebuggingEnabled\\(true\\)",
+        "postUrl"
+      ]
+    },
+    "Insufficient Cryptography": {
+      "Severity": "medium",
+      "Matcher": [
+        "javax\\.crypto\\.|kalium\\.crypto\\.|bouncycastle\\.crypto\\.|(org\\.thoughtcrime\\.ssl\\.pinning).(PinningHelper|PinningSSLSocketFactory)"
+      ]
+    },
+    "Code Tampering Protection": {
+      "Severity": "high",
+      "Matcher": [
+        "java\\.lang\\.reflect\\.(Method|Field)|Class.forName|import dexguard.util\\.(TamperDetector.checkApk|CertificateChecker.checkCertificate)"
+      ]
+    },
+    "Reverse Engineering Protection": {
+      "Severity": "high",
+      "Matcher": [
+        "import dexguard.util\\.(TamperDetector.checkApk|CertificateChecker.checkCertificate|DebugDetector.isDebuggerConnected|EmulatorDetector.isRunningInEmulator|EDebugDetector.isSignedWithDebugKey)"
+      ]
+    },
+    "Lack of Code Protection": {
+      "Severity": "low",
+      "Matcher": [
+        "java\\.lang\\.(System|Runtime)|utils\\.AESObfuscator|getObfuscator"
+      ]
+    },
+    "Hardcoded Sensitive information": {
+      "Severity": "high",
+      "Matcher": [
+        "(password|secret|username|key) = .*" 
+      ]
+    },
+    "Weak Cryptography": {
+      "Severity": "medium",
+      "Matcher": [
+        "java\\.security\\.MessageDigest\\.(getMessageDigestSpi|MessageDigest)|java\\.util\\.Random"
+      ]
+    },
+    "SSL Implementation": {
+      "Severity": "medium",
+      "Matcher": [
+        "javax\\.net\\.ssl\\.(.*)",  
+        "ALlow_ALL_HOSTNAME_VERIFIER",
+        ".setDefaultHostnameVerifier",
+        "NullHostnameVerifier"
+      ]
+      },
+        "Insecure Logging": {
+      "Severity": "low",
+      "Matcher": [
+        "Log.i|Log.d|Log.v"  
+      ]
+    },
+    "Debuggable Code": {
+      "Severity": "info",
+      "Matcher": [
+        "android:debuggable"
+      ]
+    },
+    "Insecure Permissions": {
+      "Severity": "high",
+      "Matcher": [
+        "android.permission\\.(WRITE_EXTERNAL_STORAGE|READ_CONTACTS|ACCESS_FINE_LOCATION|RECORD_AUDIO|CAMERA)"  
+      ]
+    },
+    "Unencrypted Shared Preferences": {
+      "Severity": "low",
+      "Matcher": [
+        "getSharedPreferences\\(.*\\)"  
+      ]
+    },
+    "Unverified Network Requests": {
+      "Severity": "medium",
+      "Matcher": [
+        "URLConnection.connect|HttpURLConnection.connect|openConnection"  
+      ]
+    },
+    "Insecure Content Provider": {
+      "Severity": "high",
+      "Matcher": [
+        "ContentProvider"  
+      ]
+    },
+    "Insecure Broadcast Receivers": {
+      "Severity": "medium",
+      "Matcher": [
+        "<receiver android:name=\\"
+  
+      ]
+    },
+    "Unhandled Exceptions": {
+      "Severity": "low",
+      "Matcher": [
+        "try {.*} catch.*" 
+      ]
+    }
+  }
