@@ -5,6 +5,14 @@
 </p>
 
 APkit is a powerful tool designed for analyzing security vulnerabilities and reversing Android APK files. Currently in Beta Phase, See [Screenshots](https://github.com/System00-Security/Apkit/demoshots).
+ <p align="center">
+  <a href="https://github.com/System00-Security/Apkit/">
+    <img src="https://img.shields.io/static/v1?label=Project&message=APKit&color=green">
+  </a>
+    <a href="https://github.com/System00-Security/Apkit/">
+    <img src="https://img.shields.io/static/v1?label=Update&message=V1.0_beta&color=green">
+  </a>
+</p>
 
 ## Usage
 ```
