@@ -16,7 +16,7 @@ $ python3 apkit.py --help
 ```
 
 ## Requirements
-# Run dependency.sh to Fullfill all dependency
+#### Run dependency.sh to Fullfill all dependency
 ```
 $ pip3 install colorama
 $ sudo pip3 install frida
