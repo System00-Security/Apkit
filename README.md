@@ -6,6 +6,25 @@
 
 APkit is a powerful tool designed for analyzing security vulnerabilities and reversing Android APK files. Currently in Beta Phase, See [Screenshots](https://github.com/System00-Security/Apkit/demoshots).
 
+## Usage
+```
+$ git clone https://github.com/System00-Security/Apkit
+$ cd Apkit
+$ chmod +x dependency.sh
+$ python3 apkit.py --help
+
+```
+
+## Requirements
+# Run dependency.sh to Fullfill all dependency
+```
+$ pip3 install colorama
+$ sudo pip3 install frida
+$ sudo pip3 install frida-tools
+$ pip3 install androguard==3.4.0a1
+$ sudo apt install openjdk8 # install jdk8
+```
+
 ## Reporting Issues
 
 If you encounter any bugs or issues while using APkit, please help us improve by reporting them. You can create a new issue on our [GitHub Issues page](https://github.com/System00-Security/Apkit/issues).
