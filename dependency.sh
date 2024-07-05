@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing Python dependencies..."
-pip3 install colorama frida frida-tools androguard==3.4.0a1
+pip3 install colorama frida frida-tools androguard==3.4.0a1 bs4
 
 echo "Setting up directories..."
 mkdir -p bin/jadx
