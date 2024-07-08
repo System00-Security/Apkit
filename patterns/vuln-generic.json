@@ -113,10 +113,24 @@
         "[a-zA-Z]{3,10}://[^/\\s:@]{3,20}:[^/\\s:@]{3,20}@.{1,100}[\"'\\s]",
         "http://[^/\\s:@]{3,20}:[^/\\s:@]{3,20}@.{1,100}[\"'\\s]",
         "bearer\\s[a-zA-Z0-9_\\-:\\.=]+",
-        "basic\\s[a-zA-Z0-9_\\-:\\.=]+"
+        "basic\\s[a-zA-Z0-9_\\-:\\.=]+",
+        "[aA][pP][iI]_?[kK][eE][yY].{0,20}['|\"][0-9a-zA-Z]{32,45}['|\"]",
+        "[sS][eE][cC][rR][eE][tT].{0,20}['|\"][0-9a-zA-Z]{32,45}['|\"]"
       ]
       },
-        "Hardcoded Encryption Key": {
+    "AWS API Key": {
+      "Severity": "high",
+      "Matcher": [
+        "((?:A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16})",
+      ]
+      },
+     "Github API Key": {
+      "Severity": "high",
+      "Matcher": [
+        "[gG][iI][tT][hH][uU][bB].{0,20}['|\"][0-9a-zA-Z]{35,40}['|\"]"
+      ]
+      },
+    "Hardcoded Encryption Key": {
       "Severity": "high",
       "Matcher": [
         "(Dec_key =|Enc_key =|AES_KEY =|DES_KEY =|RSA_KEY = ).*" 
